@@ -207,13 +207,14 @@ function branchProc(baseMVA,branchSeg,transformerSeg)
       trZeroImpe = false;
     end
 
-    trθtr = transformerSeg[lineNo+2,3];
+    trθtr = -transformerSeg[lineNo+2,3];
+    trRevθtr = transformerSeg[lineNo+2,3];
     trτ = transformerSeg[lineNo+2,1]/transformerSeg[lineNo+3,1];
     trτprime = transformerSeg[lineNo+2,1]/transformerSeg[lineNo+3,1];
     trRevτ = transformerSeg[lineNo+2,1]/transformerSeg[lineNo+3,1];
     trRevτprime = 1;
     trItem = branchData(trFrom,trTo,trName,trID,trRevID,trr,trx,trg,trb,trbc,trt,trZeroImpe,trτ,trτprime,trθtr);
-    trRevItem = branchData(trTo,trFrom,trName,trRevID,trID,trr,trx,trg,trb,trbc,trt,trZeroImpe,trRevτ,trRevτprime,trθtr);
+    trRevItem = branchData(trTo,trFrom,trName,trRevID,trID,trr,trx,trg,trb,trbc,trt,trZeroImpe,trRevτ,trRevτprime,trRevθtr);
 
     push!(brList,trID);
     push!(brListSingle,trID);

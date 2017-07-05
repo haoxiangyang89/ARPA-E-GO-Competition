@@ -39,7 +39,7 @@ function buildMod(fData,uData)
   @NLconstraint(mp,qShunt0[i in bList],qsh0[i] == -bData[i].bsh*v0[i]^2);
   @NLconstraint(mp,pFlow0[k in brList;brData[k].zeroImpe == false], p0[k] == brData[k].g/(brData[k].τprime^2)*v0[brData[k].From]^2
                - brData[k].g/brData[k].τ*v0[brData[k].From]*v0[brData[k].To]*cos(θ0[brData[k].From] - θ0[brData[k].To] + brData[k].θtr)
-               + brData[k].b/brData[k].τ*v0[brData[k].From]*v0[brData[k].To]*sin(θ0[brData[k].From] - θ0[brData[k].To] + brData[k].θtr)
+               - brData[k].b/brData[k].τ*v0[brData[k].From]*v0[brData[k].To]*sin(θ0[brData[k].From] - θ0[brData[k].To] + brData[k].θtr)
                );
   @NLconstraint(mp,qFlow0[k in brList;brData[k].zeroImpe == false], q0[k] == (-brData[k].b - brData[k].bc/2)/(brData[k].τprime^2)*v0[brData[k].From]^2
                + brData[k].b/brData[k].τ*v0[brData[k].From]*v0[brData[k].To]*cos(θ0[brData[k].From] - θ0[brData[k].To] + brData[k].θtr)
@@ -69,7 +69,7 @@ function buildMod(fData,uData)
   @NLconstraint(mp,qShuntS[i in bList, s in S],qsh[i,s] == -bData[i].bsh*v[i,s]^2);
   @NLconstraint(mp,pFlowS[k in brList, s in S;(brData[k].zeroImpe == false)&(!(k in contDList[s].Loc))], p[k,s] == brData[k].g/(brData[k].τprime^2)*v[brData[k].From,s]^2
                - brData[k].g/brData[k].τ*v[brData[k].From,s]*v[brData[k].To,s]*cos(θ[brData[k].From,s] - θ[brData[k].To,s] + brData[k].θtr)
-               + brData[k].b/brData[k].τ*v[brData[k].From,s]*v[brData[k].To,s]*sin(θ[brData[k].From,s] - θ[brData[k].To,s] + brData[k].θtr)
+               - brData[k].b/brData[k].τ*v[brData[k].From,s]*v[brData[k].To,s]*sin(θ[brData[k].From,s] - θ[brData[k].To,s] + brData[k].θtr)
                );
   @NLconstraint(mp,qFlowS[k in brList, s in S;(brData[k].zeroImpe == false)&(!(k in contDList[s].Loc))], q[k,s] == (-brData[k].b - brData[k].bc/2)/(brData[k].τprime^2)*v[brData[k].From,s]^2
                + brData[k].b/brData[k].τ*v[brData[k].From,s]*v[brData[k].To,s]*cos(θ[brData[k].From,s] - θ[brData[k].To,s] + brData[k].θtr)

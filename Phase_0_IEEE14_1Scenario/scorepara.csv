@@ -1,0 +1,8 @@
+Data set,Phase_0_IEEE14_1Scenario
+Nominal time,1
+Nominal objective,9.00E+04
+Time scale,5
+Constraint violation penalty scale,1000
+Time violation penalty scale,100
+Max infeasibility,1.00E-06
+Number of scenarios,1
