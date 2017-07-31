@@ -1,5 +1,5 @@
 # model of the ARPA-E Competition
-using Ipopt, Complementarity;
+using Ipopt, Complementarity, JuMP;
 
 function buildMod(fData,uData)
   # Input:
